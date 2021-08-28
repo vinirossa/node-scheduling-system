@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de consultas</title>
+</head>
+
+<body>
+    <h2>Consultas</h2>
+    <hr>
+    <form action="/appointments/search" method="GET">
+        <input type="search" name="search" id="search" placeholder="Digite o email ou o CPF">
+        <button>Pesquisar</button>
+    </form>
+    <hr>
+    <% appointments.forEach(appointment => { %>
+        <h5>
+            <%= appointment.description %>
+        </h5>
+        <h5><strong>Paciente:</strong>
+            <%= appointment.name %>
+        </h5>
+        <h5><strong>Email:</strong>
+            <%= appointment.email %>
+        </h5>
+        <h5><strong>CPF:</strong>
+            <%= appointment.cpf %>
+        </h5>
+        <hr>
+        <% }) %>
+</body>
+
+</html>
